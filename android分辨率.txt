@@ -1,0 +1,36 @@
+资源目录	分辨率		比例关系	dp值	
+ldpi		240*360		0.75		120
+mdpi		320*480		1		160
+hdpi		480*800		1.5		240
+xhdpi		720*1280	2		320
+xxhdpi		1080*1920	3		480
+
+
+获取屏幕DPI（屏幕密度）方法：
+
+DisplayMetrics dm = new DisplayMetrics();    
+dm = getResources().getDisplayMetrics();  
+float density = dm.density;//屏幕密度（像素比例：0.75, 1.0, 1.5, 2.0）  
+int densityDPI = dm.densityDpi;//屏幕密度（每寸像素：120, 160, 240, 320） 
+
+px与dip的换算：
+density = 0.75		px : dip = 1 : 1.5
+density = 1		px : dip = 1 : 1
+density = 1.5		px : dip = 1.5 : 1
+
+pixels = dps * (density /160)
+
+参考资料
+http://www.cnblogs.com/cmduan/archive/2012/03/09/2388345.html
+http://www.woshipm.com/pd/43600.html
+
+=======================================================
+android 切图
+480*800  dp=px*2/3
+720*1280 dp=px/2
+
+=======================================================
+Android 在浏览器中打开应用并可以传递参数
+http://stackoverflow.com/questions/2958701/launch-custom-android-application-from-android-browser
+
+=======================================================
